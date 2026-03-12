@@ -86,6 +86,12 @@ body, p, li, a, span, strong {
   font-size: 0.85rem;
   margin-top: 3px;
 }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -97,6 +103,29 @@ body, p, li, a, span, strong {
   font-weight: 500;
 }
 .nav a:hover { color: var(--text); }
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+}
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  min-width: 44px;
+  min-height: 36px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--primary-2), var(--teal));
+  color: white;
+}
 .section-tag {
   display: inline-flex;
   align-items: center;
@@ -625,7 +654,13 @@ body, p, li, a, span, strong {
     flex-direction: column;
     align-items: flex-start;
   }
+  .nav-right {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
   .nav { gap: 14px; }
+  .lang-switcher { align-self: flex-end; }
   .hero-section { padding-top: 64px; }
   .hero-visual-panel { min-height: auto; padding: 24px; }
 }
