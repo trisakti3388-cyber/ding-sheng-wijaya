@@ -94,14 +94,38 @@ body, p, li, a, span, strong {
 }
 .menu-toggle {
   display: none;
-  min-width: 46px;
+  width: 46px;
   height: 42px;
   border-radius: 12px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.04);
   color: var(--text);
-  font-size: 1.2rem;
   cursor: pointer;
+  padding: 0;
+  position: relative;
+}
+.menu-toggle span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.18s ease, opacity 0.18s ease, top 0.18s ease;
+}
+.menu-toggle span:nth-child(1) { top: 13px; }
+.menu-toggle span:nth-child(2) { top: 20px; }
+.menu-toggle span:nth-child(3) { top: 27px; }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  top: 20px;
+  transform: rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  top: 20px;
+  transform: rotate(-45deg);
 }
 .nav {
   display: flex;
@@ -690,10 +714,13 @@ body, p, li, a, span, strong {
     box-shadow: var(--shadow);
     flex-direction: column;
     gap: 2px;
-    z-index: 90;
+    z-index: 120;
   }
   .nav.open {
     display: flex;
+  }
+  .nav[hidden] {
+    display: none !important;
   }
   .nav a {
     display: block;
@@ -749,5 +776,8 @@ body, p, li, a, span, strong {
   .nav {
     right: 12px;
     width: min(260px, calc(100vw - 24px));
+  }
+  .lang-switcher {
+    transform: scale(0.98);
   }
 }

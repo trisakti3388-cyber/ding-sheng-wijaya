@@ -24,8 +24,10 @@
           </div>
         </a>
         <div class="nav-right">
-          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-          <nav class="nav" id="site-nav">
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="nav" id="site-nav" hidden>
             <a href="#tentang" data-i18n="nav.about">Tentang</a>
             <a href="#layanan" data-i18n="nav.services">Layanan</a>
             <a href="#keunggulan" data-i18n="nav.advantages">Keunggulan</a>
@@ -409,16 +411,38 @@
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
     if (menuToggle && nav) {
+      const closeMenu = () => {
+        nav.classList.remove('open');
+        nav.hidden = true;
+        menuToggle.setAttribute('aria-expanded', 'false');
+      };
+      const openMenu = () => {
+        nav.hidden = false;
+        nav.classList.add('open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      };
       menuToggle.addEventListener('click', () => {
-        const open = nav.classList.toggle('open');
-        menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        const isOpen = nav.classList.contains('open');
+        if (isOpen) closeMenu();
+        else openMenu();
       });
       nav.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
-          nav.classList.remove('open');
-          menuToggle.setAttribute('aria-expanded', 'false');
+          if (window.innerWidth <= 860) closeMenu();
         });
       });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 860) {
+          nav.hidden = false;
+          nav.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          nav.hidden = !nav.classList.contains('open');
+        }
+      });
+      if (window.innerWidth > 860) {
+        nav.hidden = false;
+      }
     }
   </script>
 </body>
