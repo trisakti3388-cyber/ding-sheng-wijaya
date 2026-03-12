@@ -31,6 +31,10 @@ img { display: block; max-width: 100%; }
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 }
+body, p, li, a, span, strong {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 .site-header {
   position: sticky;
   top: 0;
@@ -627,10 +631,37 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 640px) {
   .container { width: min(100% - 24px, 1180px); }
-  .hero-copy h1 { max-width: none; }
+  .hero-section { padding: 44px 0 40px; }
+  .section { padding: 52px 0; }
+  .hero-copy h1 {
+    max-width: none;
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.05;
+  }
+  .hero-lead,
+  .about-copy p,
+  .feature-card p,
+  .advantage-card p,
+  .value-panel p,
+  .enterprise-card p,
+  .contact-copy p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
   .hero-actions { flex-direction: column; }
   .btn { width: 100%; }
   .hero-metrics { flex-direction: column; }
+  .metric-item,
+  .capability-item,
+  .feature-card,
+  .advantage-card,
+  .value-panel,
+  .enterprise-card,
+  .contact-panel,
+  .summary-item {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
   .visual-mini-grid,
   .advantage-grid,
   .value-grid,
@@ -640,5 +671,14 @@ img { display: block; max-width: 100%; }
   }
   .site-header {
     position: static;
+  }
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+    width: 100%;
+  }
+  .nav a {
+    padding: 8px 0;
   }
 }
