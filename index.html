@@ -24,7 +24,8 @@
           </div>
         </a>
         <div class="nav-right">
-          <nav class="nav">
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+          <nav class="nav" id="site-nav">
             <a href="#tentang" data-i18n="nav.about">Tentang</a>
             <a href="#layanan" data-i18n="nav.services">Layanan</a>
             <a href="#keunggulan" data-i18n="nav.advantages">Keunggulan</a>
@@ -404,6 +405,21 @@
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
     });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    if (menuToggle && nav) {
+      menuToggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   </script>
 </body>
 </html>
