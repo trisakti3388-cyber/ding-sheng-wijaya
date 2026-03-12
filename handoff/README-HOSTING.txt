@@ -21,7 +21,7 @@ Current CTA behavior:
 
 Configured contact links:
 - WhatsApp: https://wa.me/62822888833
-- Email: mailto:dingshengwijaya@gmail.com
+- Email: mailto:cs@dswijaya.com
 
 Notes:
 - index.html is the main homepage.
