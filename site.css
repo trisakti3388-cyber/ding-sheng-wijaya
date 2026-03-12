@@ -719,21 +719,21 @@ body, p, li, a, span, strong {
   }
   .mobile-menu .nav {
     display: none;
-    position: fixed;
-    top: 86px;
-    left: 12px;
-    right: 12px;
-    width: auto;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: min(260px, calc(100vw - 40px));
     padding: 14px;
     border-radius: 18px;
-    background: rgba(5, 11, 23, 0.995);
+    background: rgba(5, 11, 23, 0.998);
     border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.55);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     flex-direction: column;
     gap: 2px;
-    z-index: 9999;
+    z-index: 99999;
+    isolation: isolate;
   }
   .mobile-menu[open] .nav {
     display: flex;
@@ -800,9 +800,8 @@ body, p, li, a, span, strong {
     position: static;
   }
   .mobile-menu .nav {
-    top: 78px;
-    left: 12px;
-    right: 12px;
+    right: 0;
+    width: min(260px, calc(100vw - 24px));
   }
   .lang-switcher {
     transform: scale(0.98);
@@ -814,6 +813,7 @@ body, p, li, a, span, strong {
   }
   .site-header {
     z-index: 10000;
+    overflow: visible;
   }
 }
 
