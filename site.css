@@ -92,6 +92,16 @@ body, p, li, a, span, strong {
   gap: 18px;
   flex-wrap: wrap;
 }
+.mobile-menu {
+  display: none;
+  position: relative;
+}
+.mobile-menu summary {
+  list-style: none;
+}
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
 .menu-toggle {
   display: none;
   width: 46px;
@@ -696,16 +706,22 @@ body, p, li, a, span, strong {
     align-items: center;
     gap: 10px;
   }
+  .mobile-menu {
+    display: block;
+  }
   .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
-  .nav {
+  .nav-desktop {
+    display: none;
+  }
+  .mobile-menu .nav {
     display: none;
     position: absolute;
     top: calc(100% + 10px);
-    right: 20px;
+    right: 0;
     width: min(260px, calc(100vw - 40px));
     padding: 14px;
     border-radius: 18px;
@@ -716,13 +732,10 @@ body, p, li, a, span, strong {
     gap: 2px;
     z-index: 120;
   }
-  .nav.open {
+  .mobile-menu[open] .nav {
     display: flex;
   }
-  .nav[hidden] {
-    display: none !important;
-  }
-  .nav a {
+  .mobile-menu .nav a {
     display: block;
     padding: 10px 8px;
   }
@@ -732,6 +745,10 @@ body, p, li, a, span, strong {
 }
 @media (max-width: 640px) {
   .container { width: min(100% - 24px, 1180px); }
+  .mobile-menu .nav {
+    right: 0;
+    width: min(260px, calc(100vw - 24px));
+  }
   .hero-section { padding: 44px 0 40px; }
   .section { padding: 52px 0; }
   .hero-copy h1 {
@@ -779,5 +796,11 @@ body, p, li, a, span, strong {
   }
   .lang-switcher {
     transform: scale(0.98);
+  }
+}
+
+@media (min-width: 861px) {
+  .nav-desktop {
+    display: flex;
   }
 }
