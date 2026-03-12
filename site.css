@@ -713,7 +713,8 @@ body, p, li, a, span, strong {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    z-index: 10001;
+    z-index: 2147483001;
+    position: relative;
   }
   .nav-desktop {
     display: none;
@@ -722,10 +723,10 @@ body, p, li, a, span, strong {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(5, 11, 23, 0.96);
+    background: rgba(5, 11, 23, 0.985);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    z-index: 9998;
+    z-index: 2147483000;
     padding: 96px 24px 24px;
   }
   .mobile-menu[open] .mobile-menu-panel {
@@ -737,6 +738,8 @@ body, p, li, a, span, strong {
     gap: 10px;
     max-width: 420px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2147483003;
   }
   .mobile-menu .nav a {
     display: block;
@@ -804,6 +807,14 @@ body, p, li, a, span, strong {
   .mobile-menu-panel {
     padding: 84px 16px 20px;
   }
+  .hero-section,
+  .section,
+  .page-shell,
+  main,
+  .container {
+    position: relative;
+    z-index: auto;
+  }
   .mobile-menu .nav {
     max-width: none;
   }
@@ -816,8 +827,12 @@ body, p, li, a, span, strong {
     z-index: 1000;
   }
   .site-header {
-    z-index: 10000;
+    z-index: 2147483002;
     overflow: visible;
+    position: sticky;
+  }
+  .mobile-menu[open] {
+    position: static;
   }
   .mobile-menu[open] .menu-toggle {
     position: relative;
