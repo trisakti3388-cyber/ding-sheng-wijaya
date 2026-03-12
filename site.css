@@ -286,6 +286,32 @@ a { color: inherit; }
 .section {
   padding: 78px 0;
 }
+.capability-strip {
+  padding-top: 6px;
+  padding-bottom: 8px;
+}
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.capability-item {
+  padding: 22px 24px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.capability-item strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+.capability-item span {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
 .alt-section {
   position: relative;
 }
@@ -421,6 +447,36 @@ a { color: inherit; }
 .security-band {
   padding-top: 20px;
 }
+.section-head.narrow {
+  max-width: 760px;
+}
+.enterprise-section {
+  padding-top: 8px;
+}
+.enterprise-shell {
+  position: relative;
+}
+.enterprise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.enterprise-card {
+  padding: 28px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(13,22,42,0.88), rgba(9,16,30,0.92));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.enterprise-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+.enterprise-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+}
 .security-box {
   padding: 34px;
   display: grid;
@@ -496,7 +552,9 @@ a { color: inherit; }
   .advantage-grid,
   .value-grid,
   .final-cta-box,
-  .premium-banner {
+  .premium-banner,
+  .capability-grid,
+  .enterprise-grid {
     grid-template-columns: 1fr;
   }
   .feature-card.large { grid-row: auto; }
