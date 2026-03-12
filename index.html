@@ -1,458 +1,1434 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PT Ding Sheng Wijaya — Solusi Teknologi Modern</title>
-  <meta name="description" content="PT Ding Sheng Wijaya adalah perusahaan teknologi multinasional di Indonesia yang menghadirkan software finansial, AI, automation, dan solusi digital premium untuk pertumbuhan bisnis." />
+  <title>PT Ding Sheng Wijaya — Financial Software, AI & Automation</title>
+  <meta name="description" content="PT Ding Sheng Wijaya builds secure financial software, AI-powered automation, and enterprise digital platforms for modern businesses." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./site.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f9ff;
+      --bg-2: #eef5ff;
+      --surface: #ffffff;
+      --surface-soft: #f8fbff;
+      --line: #dbe8ff;
+      --line-2: #e8f0ff;
+      --text: #11223a;
+      --muted: #5f7190;
+      --blue: #1f67ff;
+      --blue-2: #4f8cff;
+      --blue-3: #eaf2ff;
+      --cyan: #14b8ff;
+      --shadow: 0 18px 50px rgba(24, 66, 145, 0.10);
+      --shadow-soft: 0 10px 30px rgba(24, 66, 145, 0.07);
+      --header-bg: rgba(255,255,255,0.84);
+      --body-grad-1: rgba(79,140,255,0.12);
+      --body-grad-2: rgba(20,184,255,0.10);
+      --body-grad-3: #f9fbff;
+      --body-grad-4: #f3f8ff;
+      --body-grad-5: #ffffff;
+      --panel-grad-1: #ffffff;
+      --panel-grad-2: #f6faff;
+      --visual-grad-1: #f7fbff;
+      --visual-grad-2: #ffffff;
+      --window-bg: #f6f9ff;
+      --card-bg: rgba(255,255,255,0.85);
+      --metric-bg: rgba(255,255,255,0.72);
+      --feature-grad-1: #ffffff;
+      --feature-grad-2: #f7fbff;
+      --quote-grad-1: #edf4ff;
+      --quote-grad-2: #f7fbff;
+      --cta-grad-1: #f5f9ff;
+      --cta-grad-2: #edf4ff;
+      --badge-bg: var(--blue-3);
+      --max: 1180px;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #06111f;
+      --bg-2: #0a1830;
+      --surface: #0d1b34;
+      --surface-soft: #10203d;
+      --line: rgba(145, 180, 255, 0.18);
+      --line-2: rgba(145, 180, 255, 0.12);
+      --text: #eef4ff;
+      --muted: #9fb0cb;
+      --blue: #6ea8ff;
+      --blue-2: #4f8cff;
+      --blue-3: rgba(110,168,255,0.12);
+      --cyan: #59d4ff;
+      --shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+      --shadow-soft: 0 12px 34px rgba(0, 0, 0, 0.24);
+      --header-bg: rgba(5,14,27,0.78);
+      --body-grad-1: rgba(79,140,255,0.16);
+      --body-grad-2: rgba(20,184,255,0.10);
+      --body-grad-3: #071220;
+      --body-grad-4: #09172c;
+      --body-grad-5: #06111f;
+      --panel-grad-1: #0d1b34;
+      --panel-grad-2: #10203d;
+      --visual-grad-1: #10203d;
+      --visual-grad-2: #0d1b34;
+      --window-bg: #10203d;
+      --card-bg: rgba(13,27,52,0.88);
+      --metric-bg: rgba(16,32,61,0.86);
+      --feature-grad-1: #0d1b34;
+      --feature-grad-2: #10203d;
+      --quote-grad-1: #10203d;
+      --quote-grad-2: #0d1b34;
+      --cta-grad-1: #0b1a32;
+      --cta-grad-2: #10203d;
+      --badge-bg: rgba(110,168,255,0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top right, var(--body-grad-1), transparent 20%),
+        radial-gradient(circle at top left, var(--body-grad-2), transparent 18%),
+        linear-gradient(180deg, var(--body-grad-3) 0%, var(--body-grad-4) 52%, var(--body-grad-5) 100%);
+      transition: background .3s ease, color .3s ease;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--header-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(31,103,255,0.08);
+      transition: background .3s ease;
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 10px 28px rgba(31,103,255,0.20);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-switch,
+    .theme-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .lang-btn,
+    .theme-btn {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .lang-btn.active,
+    .theme-btn.active {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-weight: 700;
+      transition: .25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
+      box-shadow: 0 14px 30px rgba(31,103,255,0.18);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--blue);
+      border-color: rgba(31,103,255,0.14);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+      padding: 0;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-toggle span {
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--blue);
+      display: block;
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid rgba(31,103,255,0.08);
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .mobile-menu-inner {
+      display: grid;
+      gap: 10px;
+      padding: 16px 0 18px;
+    }
+
+    .mobile-menu-inner a {
+      padding: 12px 14px;
+      border-radius: 14px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .mobile-menu-inner a:not(.mobile-cta):hover {
+      background: var(--surface-soft);
+    }
+
+    .mobile-cta {
+      margin-top: 4px;
+      width: 100%;
+    }
+
+    .hero {
+      padding: 78px 0 32px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--blue-3);
+      color: var(--blue);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+    }
+
+    h1 {
+      margin: 18px 0 18px;
+      font-size: clamp(40px, 5.2vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      max-width: 760px;
+    }
+
+    .hero p {
+      margin: 0 0 28px;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--metric-bg);
+      border: 1px solid var(--line-2);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 4px;
+      color: var(--blue);
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-visual {
+      position: relative;
+      padding: 22px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, var(--panel-grad-1) 0%, var(--panel-grad-2) 100%);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(31,103,255,0.10), transparent 30%);
+      pointer-events: none;
+    }
+
+    .visual-card {
+      border-radius: 24px;
+      background: linear-gradient(180deg, var(--visual-grad-1), var(--visual-grad-2));
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .window-top {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+      background: var(--window-bg);
+      border-bottom: 1px solid var(--line-2);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--blue) 28%, white);
+    }
+
+    .dashboard-shot {
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .bars {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+    }
+
+    .panel,
+    .mini-stat,
+    .project-image {
+      border-radius: 18px;
+      border: 1px solid var(--line-2);
+      background: var(--surface);
+    }
+
+    .panel {
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .panel-title {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--blue) 10%, transparent);
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .mini-stat {
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mini-stat strong {
+      display: block;
+      color: var(--blue);
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .mini-stat span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    section { padding: 48px 0; }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .lead,
+    .section-head p,
+    .card p,
+    .timeline p,
+    .contact-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      padding: 24px;
+      border-radius: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--line-2);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 10%, var(--surface)), color-mix(in srgb, var(--cyan) 8%, var(--surface)));
+      border: 1px solid var(--line);
+      color: var(--blue);
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+
+    .list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .split-box {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .feature-box {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, var(--feature-grad-1) 0%, var(--feature-grad-2) 100%);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: var(--badge-bg);
+      border: 1px solid var(--line);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line-2);
+    }
+
+    .timeline-item:last-child { border-bottom: 0; }
+
+    .step {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 14px 24px rgba(31,103,255,0.16);
+    }
+
+    .project-card {
+      padding: 18px;
+      border-radius: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line-2);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .project-image {
+      height: 220px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .project-image svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .quote-box {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--quote-grad-1), var(--quote-grad-2));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .quote-box strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stack span {
+      padding: 11px 14px;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta {
+      padding: 34px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--cta-grad-1) 0%, var(--cta-grad-2) 100%);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-card {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue);
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .split-box,
+      .cta,
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid,
+      .split-box,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links,
+      .nav-cta-desktop { display: none; }
+      .mobile-toggle { display: inline-flex; }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .brand {
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .brand > div:last-child {
+        font-size: 14px;
+        line-height: 1.2;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      h1 { font-size: 36px; }
+      h2 { font-size: 30px; }
+      .hero p { font-size: 16px; }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn,
+      .btn {
+        width: 100%;
+      }
+
+      .hero-metrics,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .bars,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-box,
+      .card,
+      .project-card,
+      .quote-box,
+      .hero-visual,
+      .cta { padding: 22px; }
+      .project-image { height: 190px; }
+
+      .timeline-item {
+        grid-template-columns: 48px 1fr;
+        gap: 12px;
+      }
+
+      .step {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        font-size: 13px;
+      }
+
+      .metric strong,
+      .mini-stat strong {
+        font-size: 20px;
+      }
+
+      .quote-box strong {
+        font-size: 20px;
+      }
+
+      .lang-switch,
+      .theme-switch {
+        padding: 3px;
+      }
+
+      .lang-btn,
+      .theme-btn {
+        padding: 7px 10px;
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-shell">
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#top" aria-label="PT Ding Sheng Wijaya">
-          <div class="brand-mark image-mark">
-            <img src="./assets/dingsheng%20logo.jpg" alt="Logo PT Ding Sheng Wijaya" />
-          </div>
-          <div class="brand-copy">
-            <strong>PT Ding Sheng Wijaya</strong>
-            <span data-i18n="brand.tagline">Technology • AI • Automation</span>
-          </div>
-        </a>
-        <div class="nav-right">
-          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-          <nav class="nav nav-desktop">
-            <a href="#tentang" data-i18n="nav.about">Tentang</a>
-            <a href="#layanan" data-i18n="nav.services">Layanan</a>
-            <a href="#keunggulan" data-i18n="nav.advantages">Keunggulan</a>
-            <a href="#nilai" data-i18n="nav.values">Nilai</a>
-            <a href="#kontak" data-i18n="nav.contact">Kontak</a>
-          </nav>
-          <div class="lang-switcher" aria-label="Language switcher">
-            <button class="lang-btn active" data-lang="id" type="button">ID</button>
-            <button class="lang-btn" data-lang="en" type="button">EN</button>
-          </div>
-        </div>
-      </div>
-    </header>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <div class="brand-mark">DS</div>
+        <div data-i18n="company_name">PT Ding Sheng Wijaya</div>
+      </a>
 
-    <div class="mobile-drawer" id="mobile-drawer" hidden>
-      <div class="mobile-drawer-backdrop"></div>
-      <div class="mobile-drawer-panel">
-        <div class="mobile-drawer-top">
-          <strong>Menu</strong>
-          <button class="drawer-close" type="button" aria-label="Close menu">✕</button>
+      <nav class="nav-links">
+        <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+        <a href="#projects" data-i18n="nav_projects">Projects</a>
+        <a href="#industries" data-i18n="nav_industries">Industries</a>
+        <a href="#process" data-i18n="nav_process">Process</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="theme-switch" aria-label="Theme switcher">
+          <button type="button" class="theme-btn active" data-set-theme="light">Light</button>
+          <button type="button" class="theme-btn" data-set-theme="dark">Dark</button>
         </div>
-        <nav class="mobile-drawer-nav">
-          <a href="#tentang" data-i18n="nav.about">Tentang</a>
-          <a href="#layanan" data-i18n="nav.services">Layanan</a>
-          <a href="#keunggulan" data-i18n="nav.advantages">Keunggulan</a>
-          <a href="#nilai" data-i18n="nav.values">Nilai</a>
-          <a href="#kontak" data-i18n="nav.contact">Kontak</a>
-        </nav>
-        <div class="mobile-drawer-lang">
-          <button class="lang-btn active" data-lang="id" type="button">ID</button>
-          <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-set-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-set-lang="id">ID</button>
         </div>
+        <a class="btn btn-primary nav-cta-desktop" href="https://wa.me/62822888833?text=Hello%20PT%20Ding%20Sheng%20Wijaya%2C%20I%20would%20like%20to%20consult%20about%20your%20services." target="_blank" rel="noopener" data-i18n="consult_now">Consult Now</a>
+        <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
 
-    <main id="top">
+    <div class="mobile-menu">
+      <div class="mobile-menu-inner container">
+        <div class="theme-switch" aria-label="Theme switcher">
+          <button type="button" class="theme-btn active" data-set-theme="light">Light</button>
+          <button type="button" class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+        <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+        <a href="#projects" data-i18n="nav_projects">Projects</a>
+        <a href="#industries" data-i18n="nav_industries">Industries</a>
+        <a href="#process" data-i18n="nav_process">Process</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+        <a class="btn btn-primary mobile-cta" href="https://wa.me/62822888833?text=Hello%20PT%20Ding%20Sheng%20Wijaya%2C%20I%20would%20like%20to%20consult%20about%20your%20services." target="_blank" rel="noopener" data-i18n="consult_now">Consult Now</a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main id="top">
-      <section class="hero-section">
-        <div class="orb orb-a"></div>
-        <div class="orb orb-b"></div>
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <span class="section-tag" data-i18n="hero.eyebrow">PT DING SHENG WIJAYA</span>
-            <h1 data-i18n="hero.title">Masa depan bisnis yang lebih efisien dimulai dari teknologi yang tepat.</h1>
-            <p class="hero-lead" data-i18n="hero.lead">PT Ding Sheng Wijaya adalah perusahaan teknologi multinasional yang berdiri pada tahun 2020 dan berlokasi di Indonesia. Kami membantu bisnis bertumbuh melalui software finansial, AI, automation, dan solusi digital premium yang dirancang untuk meningkatkan efisiensi, memperkuat keamanan, serta menghadirkan nilai nyata bagi pengguna internal maupun external users.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#kontak" data-i18n="hero.ctaPrimary">Konsultasi Sekarang</a>
-              <a class="btn btn-secondary" href="#layanan" data-i18n="hero.ctaSecondary">Eksplor Layanan</a>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="fade-up">
+          <span class="tag" data-i18n="hero_tag">PT Ding Sheng Wijaya</span>
+          <h1 data-i18n="hero_title">Build secure financial software, AI automation, and business systems that scale with confidence.</h1>
+          <p data-i18n="hero_desc">PT Ding Sheng Wijaya helps modern companies design practical digital infrastructure — from financial software and process automation to AI-powered enterprise platforms.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/62822888833?text=Hello%20PT%20Ding%20Sheng%20Wijaya%2C%20I%20would%20like%20to%20consult%20about%20your%20services." target="_blank" rel="noopener" data-i18n="schedule_consultation">Schedule Consultation</a>
+            <a class="btn btn-secondary" href="#projects" data-i18n="view_projects">View Project Examples</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>2020</strong>
+              <span data-i18n="metric_year_label">Founded in Indonesia</span>
             </div>
-            <div class="trust-strip">
-              <span data-i18n="hero.pill1">Software Finansial</span>
-              <span data-i18n="hero.pill2">Artificial Intelligence</span>
-              <span data-i18n="hero.pill3">Automation</span>
-              <span data-i18n="hero.pill4">Security First</span>
+            <div class="metric">
+              <strong data-i18n="metric_secure_title">Secure</strong>
+              <span data-i18n="metric_secure_label">Security-first architecture</span>
             </div>
-            <div class="hero-metrics">
-              <div class="metric-item"><strong>2020</strong><span data-i18n="hero.metric1">Tahun Berdiri</span></div>
-              <div class="metric-item"><strong>AI</strong><span data-i18n="hero.metric2">Intelligence Driven</span></div>
-              <div class="metric-item"><strong>Secure</strong><span data-i18n="hero.metric3">Security First</span></div>
+            <div class="metric">
+              <strong data-i18n="metric_custom_title">Custom</strong>
+              <span data-i18n="metric_custom_label">Built for real operations</span>
             </div>
           </div>
-          <div class="hero-visual">
-            <div class="hero-visual-panel">
-              <div class="visual-badge" data-i18n="hero.visualBadge">Strategic Focus</div>
-              <h3 data-i18n="hero.visualTitle">Software Finansial, AI, dan Automation</h3>
-              <p data-i18n="hero.visualText">Membantu perusahaan membangun sistem yang kuat, modern, aman, dan scalable untuk jangka panjang.</p>
-              <div class="visual-mini-grid">
-                <div><strong>Secure</strong><span data-i18n="hero.visual1">System Protection</span></div>
-                <div><strong>Efficient</strong><span data-i18n="hero.visual2">Business Flow</span></div>
-                <div><strong>Scalable</strong><span data-i18n="hero.visual3">Growth Ready</span></div>
-                <div><strong>Adaptive</strong><span data-i18n="hero.visual4">Future Oriented</span></div>
+        </div>
+
+        <div class="hero-visual fade-up">
+          <div class="visual-card">
+            <div class="window-top">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="dashboard-shot">
+              <div class="bars">
+                <div class="panel">
+                  <div class="panel-title" data-i18n="hero_panel_title1">Finance Monitoring</div>
+                  <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+                  <div class="bar-track"><div class="bar-fill" style="width:68%"></div></div>
+                  <div class="bar-track"><div class="bar-fill" style="width:91%"></div></div>
+                  <div class="bar-track"><div class="bar-fill" style="width:74%"></div></div>
+                </div>
+                <div class="panel">
+                  <div class="panel-title" data-i18n="hero_panel_title2">Process Status</div>
+                  <div class="mini-grid">
+                    <div class="mini-stat"><strong>99.2%</strong><span data-i18n="accuracy">Accuracy</span></div>
+                    <div class="mini-stat"><strong>24/7</strong><span data-i18n="visibility">Visibility</span></div>
+                    <div class="mini-stat"><strong>Fast</strong><span data-i18n="automation">Automation</span></div>
+                    <div class="mini-stat"><strong>Safe</strong><span data-i18n="control">Control</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="panel-title" data-i18n="hero_panel_title3">Enterprise Dashboard Preview</div>
+                <svg viewBox="0 0 800 240" preserveAspectRatio="none" aria-label="project dashboard illustration">
+                  <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#1f67ff" />
+                      <stop offset="100%" stop-color="#14b8ff" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="18" y="22" width="180" height="84" rx="18" fill="#f3f8ff" stroke="#dbe8ff"/>
+                  <rect x="220" y="22" width="170" height="84" rx="18" fill="#f3f8ff" stroke="#dbe8ff"/>
+                  <rect x="412" y="22" width="170" height="84" rx="18" fill="#f3f8ff" stroke="#dbe8ff"/>
+                  <rect x="604" y="22" width="178" height="84" rx="18" fill="#f3f8ff" stroke="#dbe8ff"/>
+                  <rect x="18" y="128" width="500" height="92" rx="18" fill="#f8fbff" stroke="#dbe8ff"/>
+                  <rect x="540" y="128" width="242" height="92" rx="18" fill="#f8fbff" stroke="#dbe8ff"/>
+                  <path d="M48 190 C120 130, 170 198, 232 152 S350 204, 430 146 S490 168, 488 150" fill="none" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"/>
+                  <circle cx="232" cy="152" r="8" fill="#1f67ff"/>
+                  <circle cx="430" cy="146" r="8" fill="#14b8ff"/>
+                  <rect x="570" y="150" width="26" height="46" rx="8" fill="#dce9ff"/>
+                  <rect x="608" y="136" width="26" height="60" rx="8" fill="#c7dcff"/>
+                  <rect x="646" y="122" width="26" height="74" rx="8" fill="#9fc2ff"/>
+                  <rect x="684" y="108" width="26" height="88" rx="8" fill="#1f67ff"/>
+                </svg>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="section capability-strip">
-        <div class="container capability-grid">
-          <div class="capability-item"><strong data-i18n="capability.1.title">Enterprise Mindset</strong><span data-i18n="capability.1.text">Dirancang untuk pertumbuhan bisnis yang berkelanjutan</span></div>
-          <div class="capability-item"><strong data-i18n="capability.2.title">Secure Architecture</strong><span data-i18n="capability.2.text">Prioritas tinggi pada keamanan sistem dan data</span></div>
-          <div class="capability-item"><strong data-i18n="capability.3.title">Adaptive Execution</strong><span data-i18n="capability.3.text">Fleksibel untuk kebutuhan bisnis yang dinamis</span></div>
-        </div>
-      </section>
-
-      <section id="tentang" class="section">
-        <div class="container about-grid">
-          <div class="about-copy">
-            <span class="section-tag" data-i18n="about.eyebrow">Tentang Kami</span>
-            <h2 data-i18n="about.title">Menghubungkan kebutuhan bisnis dengan solusi teknologi yang bernilai tinggi.</h2>
-            <p data-i18n="about.p1">PT Ding Sheng Wijaya bergerak dalam pengembangan software finansial, AI, automation, dan berbagai solusi teknologi yang dirancang untuk membantu perusahaan bekerja lebih cepat, lebih akurat, dan lebih siap menghadapi perubahan pasar yang dinamis.</p>
-            <p data-i18n="about.p2">Kami percaya bahwa teknologi yang tepat tidak hanya harus modern, tetapi juga harus mampu mempercepat proses bisnis, meningkatkan kualitas layanan, dan memberikan manfaat yang jelas bagi seluruh ekosistem pengguna.</p>
-          </div>
-          <div class="about-image-card summary-card">
-            <div class="summary-item">
-              <span data-i18n="about.summary1.label">Didirikan</span>
-              <strong>2020</strong>
-            </div>
-            <div class="summary-item">
-              <span data-i18n="about.summary2.label">Basis Operasional</span>
-              <strong data-i18n="about.summary2.value">Indonesia</strong>
-            </div>
-            <div class="summary-item">
-              <span data-i18n="about.summary3.label">Fokus Utama</span>
-              <strong data-i18n="about.summary3.value">Software Finansial & Solusi Digital</strong>
-            </div>
-            <div class="summary-item">
-              <span data-i18n="about.summary4.label">Komitmen</span>
-              <strong data-i18n="about.summary4.value">Efisiensi, Keamanan, dan Nilai Bisnis</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="layanan" class="section alt-section">
-        <div class="container">
-          <div class="section-head">
-            <span class="section-tag" data-i18n="services.eyebrow">Layanan Utama</span>
-            <h2 data-i18n="services.title">Solusi digital premium untuk kebutuhan bisnis modern</h2>
-          </div>
-          <div class="service-grid detailed-grid">
-            <article class="feature-card large">
-              <div class="icon-badge">01</div>
-              <h3 data-i18n="services.1.title">Software Finansial</h3>
-              <p data-i18n="services.1.text">Pengembangan platform dan sistem finansial untuk mendukung transaksi, pencatatan, monitoring, integrasi, dan pelaporan yang lebih akurat, efisien, aman, dan mudah dikelola.</p>
-            </article>
-            <article class="feature-card">
-              <div class="icon-badge">02</div>
-              <h3 data-i18n="services.2.title">Artificial Intelligence</h3>
-              <p data-i18n="services.2.text">Penerapan AI untuk analisis data, peningkatan pengambilan keputusan, personalisasi pengalaman, dan efisiensi proses operasional secara berkelanjutan.</p>
-            </article>
-            <article class="feature-card">
-              <div class="icon-badge">03</div>
-              <h3 data-i18n="services.3.title">Automation</h3>
-              <p data-i18n="services.3.text">Automasi alur kerja untuk mengurangi pekerjaan manual, meningkatkan konsistensi, dan mempercepat proses bisnis di berbagai lini operasional.</p>
-            </article>
-            <article class="feature-card">
-              <div class="icon-badge">04</div>
-              <h3 data-i18n="services.4.title">Custom Digital Solution</h3>
-              <p data-i18n="services.4.text">Pengembangan sistem dan integrasi yang disesuaikan dengan kebutuhan perusahaan agar solusi yang dibangun benar-benar selaras dengan target bisnis Anda.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section statement-section">
-        <div class="container statement-box">
-          <span class="section-tag" data-i18n="vision.eyebrow">Visi & Misi</span>
-          <h2 data-i18n="vision.title">“Grow Your Business Efficiently and Value for Your Internal and External Users”</h2>
-          <p data-i18n="vision.text">Kembangkan bisnis dengan lebih efisien dan hadirkan sistem yang memberikan nilai nyata bagi internal maupun external users. Prinsip ini menjadi fondasi dalam setiap proses perancangan, pengembangan, dan penyempurnaan solusi teknologi yang kami bangun.</p>
-        </div>
-      </section>
-
-      <section id="keunggulan" class="section">
-        <div class="container">
-          <div class="section-head">
-            <span class="section-tag" data-i18n="why.eyebrow">Mengapa Memilih Kami</span>
-            <h2 data-i18n="why.title">Dibangun untuk performa, keamanan, dan pertumbuhan jangka panjang</h2>
-          </div>
-          <div class="premium-banner">
-            <div>
-              <span class="mini-label" data-i18n="why.bannerLabel">Premium Technology Partner</span>
-              <strong data-i18n="why.bannerTitle">Solusi yang dirancang untuk mendukung transformasi bisnis dengan pendekatan modern dan bernilai tinggi.</strong>
-            </div>
-            <p data-i18n="why.bannerText">Kami menggabungkan strategi, teknologi, dan eksekusi agar perusahaan dapat bergerak lebih cepat, lebih aman, dan lebih siap menghadapi kompetisi digital.</p>
-          </div>
-          <div class="advantage-grid">
-            <article class="advantage-card">
-              <h3 data-i18n="why.1.title">Strategi yang Efisien</h3>
-              <p data-i18n="why.1.text">Kami membangun solusi yang membantu bisnis mengurangi kompleksitas, mempercepat proses kerja, dan meningkatkan produktivitas secara nyata.</p>
-            </article>
-            <article class="advantage-card">
-              <h3 data-i18n="why.2.title">Modern Technology Stack</h3>
-              <p data-i18n="why.2.text">Menggunakan pendekatan teknologi modern untuk menghasilkan sistem yang fleksibel, scalable, dan siap berkembang seiring kebutuhan bisnis.</p>
-            </article>
-            <article class="advantage-card">
-              <h3 data-i18n="why.3.title">Unparalleled Security</h3>
-              <p data-i18n="why.3.text">Keamanan data adalah prioritas utama kami melalui penggunaan enkripsi tingkat tinggi dan deteksi sistem keamanan yang mutakhir.</p>
-            </article>
-            <article class="advantage-card">
-              <h3 data-i18n="why.4.title">Business Value Driven</h3>
-              <p data-i18n="why.4.text">Setiap pengembangan diarahkan untuk memberikan manfaat yang dapat dirasakan oleh bisnis, tim internal, dan pelanggan akhir.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="nilai" class="section alt-section">
-        <div class="container">
-          <div class="section-head">
-            <span class="section-tag" data-i18n="values.eyebrow">Nilai-Nilai Perusahaan</span>
-            <h2 data-i18n="values.title">Pondasi budaya kerja dan kualitas solusi kami</h2>
-          </div>
-          <div class="narrative-block">
-            <p data-i18n="values.intro">Kami percaya bahwa pertumbuhan bisnis yang sehat dibangun oleh kombinasi antara integritas, kolaborasi, dan kreativitas. Karena itu, setiap produk dan layanan yang kami hadirkan selalu diarahkan untuk memberikan dampak yang nyata, berkelanjutan, dan relevan bagi masa depan perusahaan.</p>
-          </div>
-          <div class="value-grid">
-            <article class="value-panel">
-              <div class="value-label">01</div>
-              <h3>Integrity</h3>
-              <p data-i18n="values.1.text">Memegang teguh prinsip dan etika dalam setiap produk yang dikembangkan dan program yang ditawarkan kepada para pengguna, serta terbuka terhadap perubahan yang akan terjadi.</p>
-            </article>
-            <article class="value-panel">
-              <div class="value-label">02</div>
-              <h3>Collaboration</h3>
-              <p data-i18n="values.2.text">Memiliki nilai untuk bekerja secara kolaboratif demi perubahan, perkembangan, dan hasil yang lebih berdampak.</p>
-            </article>
-            <article class="value-panel">
-              <div class="value-label">03</div>
-              <h3>Creativity</h3>
-              <p data-i18n="values.3.text">Memiliki tanggung jawab untuk terus berinovasi demi menciptakan penemuan baru yang berguna dan membuka peluang masa depan.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section security-band">
-        <div class="container security-box">
-          <div>
-            <span class="section-tag" data-i18n="security.eyebrow">Security First</span>
-            <h2 data-i18n="security.title">Keamanan sistem dan database tetap menjadi prioritas utama dalam setiap solusi yang kami bangun.</h2>
-          </div>
-          <p data-i18n="security.text">Kami menggunakan pendekatan keamanan berlapis untuk memastikan data tetap aman, terjamin, dan siap mendukung kebutuhan operasional secara berkelanjutan.</p>
-        </div>
-      </section>
-
-      <section class="section enterprise-section">
-        <div class="container enterprise-shell">
-          <div class="section-head narrow">
-            <span class="section-tag" data-i18n="enterprise.eyebrow">Pendekatan Enterprise</span>
-            <h2 data-i18n="enterprise.title">Menghadirkan kualitas kerja profesional dengan orientasi hasil yang jelas.</h2>
-          </div>
-          <div class="enterprise-grid">
-            <article class="enterprise-card">
-              <h3 data-i18n="enterprise.1.title">Business-Oriented Development</h3>
-              <p data-i18n="enterprise.1.text">Setiap solusi dibangun dengan fokus pada efisiensi, skalabilitas, dan penciptaan nilai bisnis yang terukur.</p>
-            </article>
-            <article class="enterprise-card">
-              <h3 data-i18n="enterprise.2.title">Reliable Collaboration</h3>
-              <p data-i18n="enterprise.2.text">Kami percaya kerja sama yang baik dengan klien adalah fondasi untuk menciptakan solusi yang relevan dan efektif.</p>
-            </article>
-            <article class="enterprise-card">
-              <h3 data-i18n="enterprise.3.title">Future-Ready Innovation</h3>
-              <p data-i18n="enterprise.3.text">Kami terus mengeksplorasi inovasi agar bisnis Anda dapat bergerak lebih cepat dalam lanskap digital yang terus berkembang.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="kontak" class="section contact-section">
-        <div class="container contact-shell">
-          <div class="contact-copy">
-            <span class="section-tag" data-i18n="contact.eyebrow">Kontak</span>
-            <h2 data-i18n="contact.title">Bangun langkah transformasi digital Anda bersama PT Ding Sheng Wijaya.</h2>
-            <p data-i18n="contact.text">Hubungi kami untuk diskusi kebutuhan software, AI, automation, maupun pengembangan teknologi yang lebih spesifik untuk bisnis Anda.</p>
-          </div>
-          <div class="contact-panel">
-            <div class="contact-row">
-              <span data-i18n="contact.email">Email</span>
-              <a href="mailto:dingshengwijaya@gmail.com">dingshengwijaya@gmail.com</a>
-            </div>
-            <div class="contact-row">
-              <span data-i18n="contact.phone">Phone / WhatsApp</span>
-              <a href="https://wa.me/62822888833" target="_blank" rel="noopener noreferrer">0822888833</a>
-            </div>
-            <div class="contact-row">
-              <span data-i18n="contact.company">Perusahaan</span>
-              <strong>PT Ding Sheng Wijaya</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section final-cta">
-        <div class="container final-cta-box">
-          <div>
-            <span class="section-tag" data-i18n="cta.eyebrow">Siap Bertumbuh Lebih Cepat</span>
-            <h2 data-i18n="cta.title">Wujudkan sistem digital yang lebih modern, efisien, dan aman bersama kami.</h2>
-          </div>
-          <div class="final-cta-actions">
-            <a class="btn btn-primary" href="mailto:dingshengwijaya@gmail.com" data-i18n="cta.email">Email Kami</a>
-            <a class="btn btn-secondary" href="https://wa.me/62822888833" target="_blank" rel="noopener noreferrer" data-i18n="cta.whatsapp">Chat WhatsApp</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© 2026 PT Ding Sheng Wijaya. All rights reserved.</p>
-        <p data-i18n="footer.text">Software Finansial • AI • Automation • Digital Innovation</p>
       </div>
-    </footer>
-  </div>
+    </section>
+
+    <section>
+      <div class="container split-box">
+        <div class="feature-box fade-up">
+          <span class="eyebrow" data-i18n="approach_eyebrow">About Our Approach</span>
+          <h2 data-i18n="approach_title">A clean and professional digital presence built to reflect PT Ding Sheng Wijaya.</h2>
+          <p class="lead" data-i18n="approach_desc">PT Ding Sheng Wijaya focuses on building secure financial software, intelligent automation, and enterprise digital systems. This section highlights the company’s clean presentation, modern structure, and strong business-oriented positioning.</p>
+          <div class="badge-row">
+            <span class="badge" data-i18n="badge_1">Financial Software</span>
+            <span class="badge" data-i18n="badge_2">Intelligent Automation</span>
+            <span class="badge" data-i18n="badge_3">Enterprise Systems</span>
+            <span class="badge" data-i18n="badge_4">Business Efficiency</span>
+            <span class="badge" data-i18n="badge_5">Scalable Solutions</span>
+          </div>
+        </div>
+        <div class="quote-box fade-up">
+          <strong data-i18n="quote_title">PT Ding Sheng Wijaya delivers practical technology solutions designed to improve business control, efficiency, and long-term scalability.</strong>
+          <p class="lead" data-i18n="quote_desc">Our approach combines clarity, trust, and professional presentation to communicate the company’s capability in financial software, AI, and digital transformation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="container">
+        <div class="section-head fade-up">
+          <span class="eyebrow" data-i18n="solutions_eyebrow">Solutions</span>
+          <h2 data-i18n="solutions_title">Clear solution categories with stronger commercial positioning.</h2>
+          <p data-i18n="solutions_desc">Instead of only broad descriptions, this structure shows what your company can actually build and how it helps clients.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card fade-up">
+            <div class="icon">💳</div>
+            <h3 data-i18n="sol1_title">Financial Software Systems</h3>
+            <p data-i18n="sol1_desc">Platforms for transaction control, monitoring, internal finance reporting, and operational dashboards.</p>
+            <ul class="list">
+              <li data-i18n="sol1_li1">Transaction monitoring and reconciliation tools</li>
+              <li data-i18n="sol1_li2">Internal finance and balance reporting</li>
+              <li data-i18n="sol1_li3">Approval workflows and audit tracking</li>
+              <li data-i18n="sol1_li4">Operational dashboards for payment visibility</li>
+            </ul>
+          </div>
+          <div class="card fade-up">
+            <div class="icon">🤖</div>
+            <h3 data-i18n="sol2_title">AI & Intelligent Automation</h3>
+            <p data-i18n="sol2_desc">AI-powered analysis and automation built to reduce manual effort and improve speed and decision quality.</p>
+            <ul class="list">
+              <li data-i18n="sol2_li1">Smart reporting and operational insights</li>
+              <li data-i18n="sol2_li2">Anomaly review and pattern detection</li>
+              <li data-i18n="sol2_li3">Rule-based and data-driven automation</li>
+              <li data-i18n="sol2_li4">AI-assisted workflow support</li>
+            </ul>
+          </div>
+          <div class="card fade-up">
+            <div class="icon">⚙️</div>
+            <h3 data-i18n="sol3_title">Workflow & Process Automation</h3>
+            <p data-i18n="sol3_desc">Digital workflows that improve consistency, reduce repeated work, and create more controllable operations.</p>
+            <ul class="list">
+              <li data-i18n="sol3_li1">Process routing and task orchestration</li>
+              <li data-i18n="sol3_li2">System integration and notification flows</li>
+              <li data-i18n="sol3_li3">Automated reporting and data sync</li>
+              <li data-i18n="sol3_li4">Internal control and efficiency tools</li>
+            </ul>
+          </div>
+          <div class="card fade-up">
+            <div class="icon">🧩</div>
+            <h3 data-i18n="sol4_title">Custom Enterprise Platforms</h3>
+            <p data-i18n="sol4_desc">Tailor-made software aligned with internal business workflows, data structure, and long-term growth plans.</p>
+            <ul class="list">
+              <li data-i18n="sol4_li1">Internal management systems</li>
+              <li data-i18n="sol4_li2">Business dashboards and analytics portals</li>
+              <li data-i18n="sol4_li3">Secure client portals</li>
+              <li data-i18n="sol4_li4">Custom digital operations platforms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head fade-up">
+          <span class="eyebrow" data-i18n="proj_eyebrow">Selected Project Examples</span>
+          <h2 data-i18n="proj_title">Illustrative project examples aligned with PT Ding Sheng Wijaya’s capabilities.</h2>
+          <p data-i18n="proj_desc">These examples represent the types of systems PT Ding Sheng Wijaya can design and develop for modern businesses, including finance dashboards, workflow automation, and AI-driven analytics tools.</p>
+        </div>
+        <div class="grid-3">
+          <div class="project-card fade-up">
+            <div class="project-image">
+              <svg viewBox="0 0 600 400" preserveAspectRatio="none" aria-label="financial dashboard project">
+                <defs>
+                  <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#eef5ff"/>
+                    <stop offset="100%" stop-color="#ffffff"/>
+                  </linearGradient>
+                  <linearGradient id="p2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#1f67ff"/>
+                    <stop offset="100%" stop-color="#14b8ff"/>
+                  </linearGradient>
+                </defs>
+                <rect width="600" height="400" fill="url(#p1)"/>
+                <rect x="28" y="30" width="544" height="50" rx="18" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="28" y="98" width="164" height="110" rx="22" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="214" y="98" width="164" height="110" rx="22" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="400" y="98" width="172" height="110" rx="22" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="28" y="228" width="344" height="142" rx="22" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="390" y="228" width="182" height="142" rx="22" fill="#ffffff" stroke="#dbe8ff"/>
+                <path d="M62 330 C120 260, 170 334, 242 280 S320 314, 340 258" fill="none" stroke="url(#p2)" stroke-width="12" stroke-linecap="round"/>
+                <rect x="422" y="280" width="24" height="52" rx="8" fill="#cfe0ff"/>
+                <rect x="456" y="260" width="24" height="72" rx="8" fill="#9fc2ff"/>
+                <rect x="490" y="238" width="24" height="94" rx="8" fill="#1f67ff"/>
+              </svg>
+            </div>
+            <h3 data-i18n="proj1_title">Finance Monitoring Dashboard</h3>
+            <p data-i18n="proj1_desc">Visual overview for transaction flow, balances, key metrics, and reporting control.</p>
+          </div>
+          <div class="project-card fade-up">
+            <div class="project-image">
+              <svg viewBox="0 0 600 400" preserveAspectRatio="none" aria-label="automation workflow project">
+                <rect width="600" height="400" fill="#f7fbff"/>
+                <rect x="54" y="54" width="150" height="78" rx="20" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="224" y="54" width="150" height="78" rx="20" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="394" y="54" width="150" height="78" rx="20" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="140" y="228" width="150" height="84" rx="20" fill="#ffffff" stroke="#dbe8ff"/>
+                <rect x="310" y="228" width="150" height="84" rx="20" fill="#ffffff" stroke="#dbe8ff"/>
+                <path d="M204 93 H224" stroke="#1f67ff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M374 93 H394" stroke="#1f67ff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M299 132 V180" stroke="#14b8ff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M299 180 H215" stroke="#14b8ff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M299 180 H385" stroke="#14b8ff" stroke-width="8" stroke-linecap="round"/>
+                <circle cx="299" cy="180" r="12" fill="#1f67ff"/>
+                <rect x="82" y="82" width="94" height="12" rx="6" fill="#dce8ff"/>
+                <rect x="252" y="82" width="94" height="12" rx="6" fill="#dce8ff"/>
+                <rect x="422" y="82" width="94" height="12" rx="6" fill="#dce8ff"/>
+                <rect x="168" y="260" width="94" height="12" rx="6" fill="#dce8ff"/>
+                <rect x="338" y="260" width="94" height="12" rx="6" fill="#dce8ff"/>
+              </svg>
+            </div>
+            <h3 data-i18n="proj2_title">Workflow Automation System</h3>
+            <p data-i18n="proj2_desc">Approval, routing, notification, and task automation for smoother day-to-day operations.</p>
+          </div>
+          <div class="project-card fade-up">
+            <div class="project-image">
+              <svg viewBox="0 0 600 400" preserveAspectRatio="none" aria-label="ai analytics project">
+                <defs>
+                  <linearGradient id="p3" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#1f67ff"/>
+                    <stop offset="100%" stop-color="#14b8ff"/>
+                  </linearGradient>
+                </defs>
+                <rect width="600" height="400" fill="#f7fbff"/>
+                <circle cx="300" cy="200" r="110" fill="#ffffff" stroke="#dbe8ff" stroke-width="2"/>
+                <circle cx="300" cy="200" r="72" fill="#eef5ff" stroke="#dbe8ff" stroke-width="2"/>
+                <circle cx="300" cy="200" r="28" fill="url(#p3)"/>
+                <circle cx="176" cy="112" r="34" fill="#ffffff" stroke="#dbe8ff"/>
+                <circle cx="424" cy="112" r="34" fill="#ffffff" stroke="#dbe8ff"/>
+                <circle cx="160" cy="286" r="34" fill="#ffffff" stroke="#dbe8ff"/>
+                <circle cx="440" cy="286" r="34" fill="#ffffff" stroke="#dbe8ff"/>
+                <path d="M206 128 L248 160" stroke="#1f67ff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M394 128 L352 160" stroke="#14b8ff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M190 270 L246 226" stroke="#14b8ff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M410 270 L354 226" stroke="#1f67ff" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 data-i18n="proj3_title">AI Analytics Interface</h3>
+            <p data-i18n="proj3_desc">Decision-support layer for data processing, pattern detection, and business intelligence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries">
+      <div class="container">
+        <div class="section-head fade-up">
+          <span class="eyebrow" data-i18n="industries_eyebrow">Industries</span>
+          <h2 data-i18n="industries_title">Built for data-heavy, operations-focused organizations.</h2>
+          <p data-i18n="industries_desc">Adding clear market categories helps your visitors quickly understand whether your company is relevant to them.</p>
+        </div>
+        <div class="grid-4">
+          <div class="card fade-up">
+            <div class="icon">🏦</div>
+            <h3 data-i18n="ind1_title">Financial Services</h3>
+            <p data-i18n="ind1_desc">Monitoring, reporting, and operational systems for finance-related workflows.</p>
+          </div>
+          <div class="card fade-up">
+            <div class="icon">💼</div>
+            <h3 data-i18n="ind2_title">Enterprise Operations</h3>
+            <p data-i18n="ind2_desc">Internal software for teams that need speed, control, and operational visibility.</p>
+          </div>
+          <div class="card fade-up">
+            <div class="icon">🌐</div>
+            <h3 data-i18n="ind3_title">Digital Businesses</h3>
+            <p data-i18n="ind3_desc">Scalable platforms for companies that rely on digital process efficiency and growth.</p>
+          </div>
+          <div class="card fade-up">
+            <div class="icon">📊</div>
+            <h3 data-i18n="ind4_title">Data-Driven Teams</h3>
+            <p data-i18n="ind4_desc">AI, analysis, and automation support for reporting and decision-focused teams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container grid-2">
+        <div class="fade-up">
+          <div class="section-head">
+            <span class="eyebrow" data-i18n="process_eyebrow">Process</span>
+            <h2 data-i18n="process_title">A project structure clients can easily trust.</h2>
+            <p data-i18n="process_desc">A clear process helps visitors understand how PT Ding Sheng Wijaya turns ideas into working systems.</p>
+          </div>
+        </div>
+        <div class="card fade-up">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="step">01</div>
+              <div>
+                <h3 data-i18n="p1_title">Consultation</h3>
+                <p data-i18n="p1_desc">We identify business goals, current pain points, and technical requirements.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="step">02</div>
+              <div>
+                <h3 data-i18n="p2_title">Architecture & Planning</h3>
+                <p data-i18n="p2_desc">We design a secure and scalable solution structure before development starts.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="step">03</div>
+              <div>
+                <h3 data-i18n="p3_title">Development & Integration</h3>
+                <p data-i18n="p3_desc">We build and connect the platform with the workflows and tools your team already uses.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="step">04</div>
+              <div>
+                <h3 data-i18n="p4_title">Launch & Optimization</h3>
+                <p data-i18n="p4_desc">We deploy, support, and continuously improve the platform after implementation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid-2">
+        <div class="card fade-up">
+          <span class="eyebrow" data-i18n="stack_eyebrow">Technology Stack</span>
+          <h2 style="font-size:36px;" data-i18n="stack_title">Modern technology for secure, scalable delivery.</h2>
+          <p class="lead" data-i18n="stack_desc">A visible stack section helps experienced buyers trust that your company has real implementation capability.</p>
+          <div class="stack">
+            <span>React</span>
+            <span>Next.js</span>
+            <span>Vue</span>
+            <span>Node.js</span>
+            <span>Python</span>
+            <span>Java</span>
+            <span>API Integration</span>
+            <span>Cloud Infrastructure</span>
+            <span>Data Security</span>
+            <span>Automation Engines</span>
+          </div>
+        </div>
+        <div class="card fade-up">
+          <span class="eyebrow" data-i18n="strength_eyebrow">Company Strength</span>
+          <h2 style="font-size:36px;" data-i18n="strength_title">Built to present the company with greater trust and clarity.</h2>
+          <p class="lead" data-i18n="strength_desc">The website structure is designed to help visitors quickly understand what PT Ding Sheng Wijaya does, what solutions it offers, and why businesses can trust the company for digital transformation projects.</p>
+          <ul class="list">
+            <li data-i18n="strength_li1">Clearer presentation improves client trust</li>
+            <li data-i18n="strength_li2">Professional design strengthens company image</li>
+            <li data-i18n="strength_li3">Project examples make capabilities easier to understand</li>
+            <li data-i18n="strength_li4">Stronger structure supports better engagement and inquiries</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container cta fade-up">
+        <div>
+          <span class="eyebrow" data-i18n="cta_eyebrow">Let’s Build</span>
+          <h2 data-i18n="cta_title">Ready to upgrade your business with a stronger digital system?</h2>
+          <p class="lead" data-i18n="cta_desc">Whether you need financial software, enterprise dashboards, AI-driven analysis, or workflow automation, PT Ding Sheng Wijaya is ready to support your next project.</p>
+          <div class="hero-actions" style="margin-top:20px; margin-bottom:0;">
+            <a class="btn btn-primary" href="https://wa.me/62822888833?text=Hello%20PT%20Ding%20Sheng%20Wijaya%2C%20I%20would%20like%20to%20consult%20about%20your%20services." target="_blank" rel="noopener" data-i18n="chat_whatsapp">Chat via WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:dingshengwijaya@gmail.com?subject=Inquiry%20to%20PT%20Ding%20Sheng%20Wijaya" data-i18n="send_email">Send Email</a>
+          </div>
+        </div>
+        <div class="contact-list">
+          <div class="contact-card">
+            <strong data-i18n="company_label">Company</strong>
+            <p data-i18n="company_name">PT Ding Sheng Wijaya</p>
+          </div>
+          <div class="contact-card">
+            <strong data-i18n="email_label">Email</strong>
+            <p>dingshengwijaya@gmail.com</p>
+          </div>
+          <div class="contact-card">
+            <strong data-i18n="whatsapp_label">WhatsApp</strong>
+            <p>+62 853-3333-3883</p>
+          </div>
+          <div class="contact-card">
+            <strong data-i18n="location_label">Location</strong>
+            <p data-i18n="location_value">Indonesia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" data-i18n="footer_text">© 2026 PT Ding Sheng Wijaya. Financial Software • AI • Automation • Enterprise Digital Systems</div>
+  </footer>
 
   <script>
     const translations = {
-      id: {
-        'brand.tagline': 'Technology • AI • Automation',
-        'nav.about': 'Tentang', 'nav.services': 'Layanan', 'nav.advantages': 'Keunggulan', 'nav.values': 'Nilai', 'nav.contact': 'Kontak',
-        'hero.eyebrow': 'PT DING SHENG WIJAYA',
-        'hero.title': 'Masa depan bisnis yang lebih efisien dimulai dari teknologi yang tepat.',
-        'hero.lead': 'PT Ding Sheng Wijaya adalah perusahaan teknologi multinasional yang berdiri pada tahun 2020 dan berlokasi di Indonesia. Kami membantu bisnis bertumbuh melalui software finansial, AI, automation, dan solusi digital premium yang dirancang untuk meningkatkan efisiensi, memperkuat keamanan, serta menghadirkan nilai nyata bagi pengguna internal maupun external users.',
-        'hero.ctaPrimary': 'Konsultasi Sekarang', 'hero.ctaSecondary': 'Eksplor Layanan',
-        'hero.pill1': 'Software Finansial', 'hero.pill2': 'Artificial Intelligence', 'hero.pill3': 'Automation', 'hero.pill4': 'Security First',
-        'hero.metric1': 'Tahun Berdiri', 'hero.metric2': 'Intelligence Driven', 'hero.metric3': 'Security First',
-        'hero.visualBadge': 'Strategic Focus', 'hero.visualTitle': 'Software Finansial, AI, dan Automation', 'hero.visualText': 'Membantu perusahaan membangun sistem yang kuat, modern, aman, dan scalable untuk jangka panjang.',
-        'hero.visual1': 'Perlindungan Sistem', 'hero.visual2': 'Alur Bisnis', 'hero.visual3': 'Siap Bertumbuh', 'hero.visual4': 'Berorientasi Masa Depan',
-        'capability.1.title': 'Enterprise Mindset', 'capability.1.text': 'Dirancang untuk pertumbuhan bisnis yang berkelanjutan',
-        'capability.2.title': 'Secure Architecture', 'capability.2.text': 'Prioritas tinggi pada keamanan sistem dan data',
-        'capability.3.title': 'Adaptive Execution', 'capability.3.text': 'Fleksibel untuk kebutuhan bisnis yang dinamis',
-        'about.eyebrow': 'Tentang Kami', 'about.title': 'Menghubungkan kebutuhan bisnis dengan solusi teknologi yang bernilai tinggi.',
-        'about.p1': 'PT Ding Sheng Wijaya bergerak dalam pengembangan software finansial, AI, automation, dan berbagai solusi teknologi yang dirancang untuk membantu perusahaan bekerja lebih cepat, lebih akurat, dan lebih siap menghadapi perubahan pasar yang dinamis.',
-        'about.p2': 'Kami percaya bahwa teknologi yang tepat tidak hanya harus modern, tetapi juga harus mampu mempercepat proses bisnis, meningkatkan kualitas layanan, dan memberikan manfaat yang jelas bagi seluruh ekosistem pengguna.',
-        'about.summary1.label': 'Didirikan', 'about.summary2.label': 'Basis Operasional', 'about.summary2.value': 'Indonesia', 'about.summary3.label': 'Fokus Utama', 'about.summary3.value': 'Software Finansial & Solusi Digital', 'about.summary4.label': 'Komitmen', 'about.summary4.value': 'Efisiensi, Keamanan, dan Nilai Bisnis',
-        'services.eyebrow': 'Layanan Utama', 'services.title': 'Solusi digital premium untuk kebutuhan bisnis modern',
-        'services.1.title': 'Software Finansial', 'services.1.text': 'Pengembangan platform dan sistem finansial untuk mendukung transaksi, pencatatan, monitoring, integrasi, dan pelaporan yang lebih akurat, efisien, aman, dan mudah dikelola.',
-        'services.2.title': 'Artificial Intelligence', 'services.2.text': 'Penerapan AI untuk analisis data, peningkatan pengambilan keputusan, personalisasi pengalaman, dan efisiensi proses operasional secara berkelanjutan.',
-        'services.3.title': 'Automation', 'services.3.text': 'Automasi alur kerja untuk mengurangi pekerjaan manual, meningkatkan konsistensi, dan mempercepat proses bisnis di berbagai lini operasional.',
-        'services.4.title': 'Custom Digital Solution', 'services.4.text': 'Pengembangan sistem dan integrasi yang disesuaikan dengan kebutuhan perusahaan agar solusi yang dibangun benar-benar selaras dengan target bisnis Anda.',
-        'vision.eyebrow': 'Visi & Misi', 'vision.title': '“Grow Your Business Efficiently and Value for Your Internal and External Users”', 'vision.text': 'Kembangkan bisnis dengan lebih efisien dan hadirkan sistem yang memberikan nilai nyata bagi internal maupun external users. Prinsip ini menjadi fondasi dalam setiap proses perancangan, pengembangan, dan penyempurnaan solusi teknologi yang kami bangun.',
-        'why.eyebrow': 'Mengapa Memilih Kami', 'why.title': 'Dibangun untuk performa, keamanan, dan pertumbuhan jangka panjang', 'why.bannerLabel': 'Premium Technology Partner', 'why.bannerTitle': 'Solusi yang dirancang untuk mendukung transformasi bisnis dengan pendekatan modern dan bernilai tinggi.', 'why.bannerText': 'Kami menggabungkan strategi, teknologi, dan eksekusi agar perusahaan dapat bergerak lebih cepat, lebih aman, dan lebih siap menghadapi kompetisi digital.',
-        'why.1.title': 'Strategi yang Efisien', 'why.1.text': 'Kami membangun solusi yang membantu bisnis mengurangi kompleksitas, mempercepat proses kerja, dan meningkatkan produktivitas secara nyata.',
-        'why.2.title': 'Modern Technology Stack', 'why.2.text': 'Menggunakan pendekatan teknologi modern untuk menghasilkan sistem yang fleksibel, scalable, dan siap berkembang seiring kebutuhan bisnis.',
-        'why.3.title': 'Unparalleled Security', 'why.3.text': 'Keamanan data adalah prioritas utama kami melalui penggunaan enkripsi tingkat tinggi dan deteksi sistem keamanan yang mutakhir.',
-        'why.4.title': 'Business Value Driven', 'why.4.text': 'Setiap pengembangan diarahkan untuk memberikan manfaat yang dapat dirasakan oleh bisnis, tim internal, dan pelanggan akhir.',
-        'values.eyebrow': 'Nilai-Nilai Perusahaan', 'values.title': 'Pondasi budaya kerja dan kualitas solusi kami', 'values.intro': 'Kami percaya bahwa pertumbuhan bisnis yang sehat dibangun oleh kombinasi antara integritas, kolaborasi, dan kreativitas. Karena itu, setiap produk dan layanan yang kami hadirkan selalu diarahkan untuk memberikan dampak yang nyata, berkelanjutan, dan relevan bagi masa depan perusahaan.',
-        'values.1.text': 'Memegang teguh prinsip dan etika dalam setiap produk yang dikembangkan dan program yang ditawarkan kepada para pengguna, serta terbuka terhadap perubahan yang akan terjadi.',
-        'values.2.text': 'Memiliki nilai untuk bekerja secara kolaboratif demi perubahan, perkembangan, dan hasil yang lebih berdampak.',
-        'values.3.text': 'Memiliki tanggung jawab untuk terus berinovasi demi menciptakan penemuan baru yang berguna dan membuka peluang masa depan.',
-        'security.eyebrow': 'Security First', 'security.title': 'Keamanan sistem dan database tetap menjadi prioritas utama dalam setiap solusi yang kami bangun.', 'security.text': 'Kami menggunakan pendekatan keamanan berlapis untuk memastikan data tetap aman, terjamin, dan siap mendukung kebutuhan operasional secara berkelanjutan.',
-        'enterprise.eyebrow': 'Pendekatan Enterprise', 'enterprise.title': 'Menghadirkan kualitas kerja profesional dengan orientasi hasil yang jelas.',
-        'enterprise.1.title': 'Business-Oriented Development', 'enterprise.1.text': 'Setiap solusi dibangun dengan fokus pada efisiensi, skalabilitas, dan penciptaan nilai bisnis yang terukur.',
-        'enterprise.2.title': 'Reliable Collaboration', 'enterprise.2.text': 'Kami percaya kerja sama yang baik dengan klien adalah fondasi untuk menciptakan solusi yang relevan dan efektif.',
-        'enterprise.3.title': 'Future-Ready Innovation', 'enterprise.3.text': 'Kami terus mengeksplorasi inovasi agar bisnis Anda dapat bergerak lebih cepat dalam lanskap digital yang terus berkembang.',
-        'contact.eyebrow': 'Kontak', 'contact.title': 'Bangun langkah transformasi digital Anda bersama PT Ding Sheng Wijaya.', 'contact.text': 'Hubungi kami untuk diskusi kebutuhan software, AI, automation, maupun pengembangan teknologi yang lebih spesifik untuk bisnis Anda.', 'contact.email': 'Email', 'contact.phone': 'Phone / WhatsApp', 'contact.company': 'Perusahaan',
-        'cta.eyebrow': 'Siap Bertumbuh Lebih Cepat', 'cta.title': 'Wujudkan sistem digital yang lebih modern, efisien, dan aman bersama kami.', 'cta.email': 'Email Kami', 'cta.whatsapp': 'Chat WhatsApp',
-        'footer.text': 'Software Finansial • AI • Automation • Digital Innovation'
-      },
       en: {
-        'brand.tagline': 'Technology • AI • Automation',
-        'nav.about': 'About', 'nav.services': 'Services', 'nav.advantages': 'Advantages', 'nav.values': 'Values', 'nav.contact': 'Contact',
-        'hero.eyebrow': 'PT DING SHENG WIJAYA',
-        'hero.title': 'A more efficient business future starts with the right technology.',
-        'hero.lead': 'PT Ding Sheng Wijaya is a multinational technology company founded in 2020 and based in Indonesia. We help businesses grow through financial software, AI, automation, and premium digital solutions designed to improve efficiency, strengthen security, and deliver real value for internal and external users.',
-        'hero.ctaPrimary': 'Consult Now', 'hero.ctaSecondary': 'Explore Services',
-        'hero.pill1': 'Financial Software', 'hero.pill2': 'Artificial Intelligence', 'hero.pill3': 'Automation', 'hero.pill4': 'Security First',
-        'hero.metric1': 'Founded', 'hero.metric2': 'Intelligence Driven', 'hero.metric3': 'Security First',
-        'hero.visualBadge': 'Strategic Focus', 'hero.visualTitle': 'Financial Software, AI, and Automation', 'hero.visualText': 'Helping companies build strong, modern, secure, and scalable systems for long-term growth.',
-        'hero.visual1': 'System Protection', 'hero.visual2': 'Business Flow', 'hero.visual3': 'Growth Ready', 'hero.visual4': 'Future Oriented',
-        'capability.1.title': 'Enterprise Mindset', 'capability.1.text': 'Designed for sustainable business growth',
-        'capability.2.title': 'Secure Architecture', 'capability.2.text': 'High priority on system and data security',
-        'capability.3.title': 'Adaptive Execution', 'capability.3.text': 'Flexible for dynamic business needs',
-        'about.eyebrow': 'About Us', 'about.title': 'Connecting business needs with high-value technology solutions.',
-        'about.p1': 'PT Ding Sheng Wijaya focuses on developing financial software, AI, automation, and various technology solutions designed to help companies work faster, more accurately, and stay ready for dynamic market changes.',
-        'about.p2': 'We believe the right technology should not only look modern, but also accelerate business processes, improve service quality, and deliver clear benefits across the entire user ecosystem.',
-        'about.summary1.label': 'Established', 'about.summary2.label': 'Operational Base', 'about.summary2.value': 'Indonesia', 'about.summary3.label': 'Core Focus', 'about.summary3.value': 'Financial Software & Digital Solutions', 'about.summary4.label': 'Commitment', 'about.summary4.value': 'Efficiency, Security, and Business Value',
-        'services.eyebrow': 'Core Services', 'services.title': 'Premium digital solutions for modern business needs',
-        'services.1.title': 'Financial Software', 'services.1.text': 'Development of financial platforms and systems to support transactions, records, monitoring, integration, and reporting with greater accuracy, efficiency, security, and manageability.',
-        'services.2.title': 'Artificial Intelligence', 'services.2.text': 'Application of AI for data analysis, better decision-making, personalized experiences, and sustainable operational efficiency.',
-        'services.3.title': 'Automation', 'services.3.text': 'Workflow automation to reduce manual work, improve consistency, and accelerate business processes across operational lines.',
-        'services.4.title': 'Custom Digital Solution', 'services.4.text': 'System development and integrations tailored to your company’s needs so that the solutions built are fully aligned with your business goals.',
-        'vision.eyebrow': 'Vision & Mission', 'vision.title': '“Grow Your Business Efficiently and Value for Your Internal and External Users”', 'vision.text': 'Grow your business more efficiently and provide systems that create real value for both internal and external users. This principle is the foundation of every technology solution we design, develop, and refine.',
-        'why.eyebrow': 'Why Choose Us', 'why.title': 'Built for performance, security, and long-term growth', 'why.bannerLabel': 'Premium Technology Partner', 'why.bannerTitle': 'Solutions designed to support business transformation with a modern and high-value approach.', 'why.bannerText': 'We combine strategy, technology, and execution so companies can move faster, safer, and with greater confidence in digital competition.',
-        'why.1.title': 'Efficient Strategy', 'why.1.text': 'We build solutions that help businesses reduce complexity, accelerate workflows, and improve productivity in a measurable way.',
-        'why.2.title': 'Modern Technology Stack', 'why.2.text': 'Using modern technology approaches to deliver flexible, scalable systems that grow with business needs.',
-        'why.3.title': 'Unparalleled Security', 'why.3.text': 'Data security is our top priority through high-level encryption and advanced security system detection.',
-        'why.4.title': 'Business Value Driven', 'why.4.text': 'Every development is aimed at delivering benefits that can be felt by the business, internal teams, and end customers.',
-        'values.eyebrow': 'Company Values', 'values.title': 'The foundation of our work culture and solution quality', 'values.intro': 'We believe healthy business growth is built through the combination of integrity, collaboration, and creativity. That is why every product and service we deliver is directed toward creating real, sustainable, and future-relevant impact.',
-        'values.1.text': 'Upholding principles and ethics in every product we develop and every program we offer to users, while remaining open to change.',
-        'values.2.text': 'Working collaboratively to drive change, progress, and more meaningful outcomes.',
-        'values.3.text': 'Continuously innovating to create new, useful discoveries and unlock future opportunities.',
-        'security.eyebrow': 'Security First', 'security.title': 'System and database security remain a top priority in every solution we build.', 'security.text': 'We use a layered security approach to ensure data remains safe, protected, and ready to support long-term operational needs.',
-        'enterprise.eyebrow': 'Enterprise Approach', 'enterprise.title': 'Delivering professional quality with clear result-oriented execution.',
-        'enterprise.1.title': 'Business-Oriented Development', 'enterprise.1.text': 'Every solution is built with a focus on efficiency, scalability, and measurable business value creation.',
-        'enterprise.2.title': 'Reliable Collaboration', 'enterprise.2.text': 'We believe strong collaboration with clients is the foundation for creating relevant and effective solutions.',
-        'enterprise.3.title': 'Future-Ready Innovation', 'enterprise.3.text': 'We continuously explore innovation so your business can move faster in an ever-evolving digital landscape.',
-        'contact.eyebrow': 'Contact', 'contact.title': 'Build your digital transformation journey with PT Ding Sheng Wijaya.', 'contact.text': 'Contact us to discuss software, AI, automation, or more specific technology development needs for your business.', 'contact.email': 'Email', 'contact.phone': 'Phone / WhatsApp', 'contact.company': 'Company',
-        'cta.eyebrow': 'Ready to Grow Faster', 'cta.title': 'Build more modern, efficient, and secure digital systems with us.', 'cta.email': 'Email Us', 'cta.whatsapp': 'Chat WhatsApp',
-        'footer.text': 'Financial Software • AI • Automation • Digital Innovation'
+        company_name: 'PT Ding Sheng Wijaya',
+        nav_solutions: 'Solutions', nav_projects: 'Projects', nav_industries: 'Industries', nav_process: 'Process', nav_contact: 'Contact', consult_now: 'Consult Now', light_theme: 'Light', dark_theme: 'Dark',
+        hero_tag: 'PT Ding Sheng Wijaya',
+        hero_title: 'Build secure financial software, AI automation, and business systems that scale with confidence.',
+        hero_desc: 'PT Ding Sheng Wijaya helps modern companies design practical digital infrastructure — from financial software and process automation to AI-powered enterprise platforms.',
+        schedule_consultation: 'Schedule Consultation', view_projects: 'View Project Examples',
+        metric_year_label: 'Founded in Indonesia', metric_secure_title: 'Secure', metric_secure_label: 'Security-first architecture', metric_custom_title: 'Custom', metric_custom_label: 'Built for real operations',
+        hero_panel_title1: 'Finance Monitoring', hero_panel_title2: 'Process Status', hero_panel_title3: 'Enterprise Dashboard Preview', accuracy: 'Accuracy', visibility: 'Visibility', automation: 'Automation', control: 'Control',
+        approach_eyebrow: 'About Our Approach', approach_title: 'A clean and professional digital presence built to reflect PT Ding Sheng Wijaya.',
+        approach_desc: 'PT Ding Sheng Wijaya focuses on building secure financial software, intelligent automation, and enterprise digital systems. This section highlights the company’s clean presentation, modern structure, and strong business-oriented positioning.',
+        badge_1: 'Financial Software', badge_2: 'Intelligent Automation', badge_3: 'Enterprise Systems', badge_4: 'Business Efficiency', badge_5: 'Scalable Solutions',
+        quote_title: 'PT Ding Sheng Wijaya delivers practical technology solutions designed to improve business control, efficiency, and long-term scalability.',
+        quote_desc: 'Our approach combines clarity, trust, and professional presentation to communicate the company’s capability in financial software, AI, and digital transformation.',
+        solutions_eyebrow: 'Solutions', solutions_title: 'Clear solution categories with stronger commercial positioning.', solutions_desc: 'Instead of only broad descriptions, this structure shows what your company can actually build and how it helps clients.',
+        sol1_title: 'Financial Software Systems', sol1_desc: 'Platforms for transaction control, monitoring, internal finance reporting, and operational dashboards.',
+        sol1_li1: 'Transaction monitoring and reconciliation tools', sol1_li2: 'Internal finance and balance reporting', sol1_li3: 'Approval workflows and audit tracking', sol1_li4: 'Operational dashboards for payment visibility',
+        sol2_title: 'AI & Intelligent Automation', sol2_desc: 'AI-powered analysis and automation built to reduce manual effort and improve speed and decision quality.',
+        sol2_li1: 'Smart reporting and operational insights', sol2_li2: 'Anomaly review and pattern detection', sol2_li3: 'Rule-based and data-driven automation', sol2_li4: 'AI-assisted workflow support',
+        sol3_title: 'Workflow & Process Automation', sol3_desc: 'Digital workflows that improve consistency, reduce repeated work, and create more controllable operations.',
+        sol3_li1: 'Process routing and task orchestration', sol3_li2: 'System integration and notification flows', sol3_li3: 'Automated reporting and data sync', sol3_li4: 'Internal control and efficiency tools',
+        sol4_title: 'Custom Enterprise Platforms', sol4_desc: 'Tailor-made software aligned with internal business workflows, data structure, and long-term growth plans.',
+        sol4_li1: 'Internal management systems', sol4_li2: 'Business dashboards and analytics portals', sol4_li3: 'Secure client portals', sol4_li4: 'Custom digital operations platforms',
+        proj_eyebrow: 'Selected Project Examples', proj_title: 'Illustrative project examples aligned with PT Ding Sheng Wijaya’s capabilities.', proj_desc: 'These examples represent the types of systems PT Ding Sheng Wijaya can design and develop for modern businesses, including finance dashboards, workflow automation, and AI-driven analytics tools.',
+        proj1_title: 'Finance Monitoring Dashboard', proj1_desc: 'Visual overview for transaction flow, balances, key metrics, and reporting control.',
+        proj2_title: 'Workflow Automation System', proj2_desc: 'Approval, routing, notification, and task automation for smoother day-to-day operations.',
+        proj3_title: 'AI Analytics Interface', proj3_desc: 'Decision-support layer for data processing, pattern detection, and business intelligence.',
+        industries_eyebrow: 'Industries', industries_title: 'Built for data-heavy, operations-focused organizations.', industries_desc: 'Adding clear market categories helps your visitors quickly understand whether your company is relevant to them.',
+        ind1_title: 'Financial Services', ind1_desc: 'Monitoring, reporting, and operational systems for finance-related workflows.',
+        ind2_title: 'Enterprise Operations', ind2_desc: 'Internal software for teams that need speed, control, and operational visibility.',
+        ind3_title: 'Digital Businesses', ind3_desc: 'Scalable platforms for companies that rely on digital process efficiency and growth.',
+        ind4_title: 'Data-Driven Teams', ind4_desc: 'AI, analysis, and automation support for reporting and decision-focused teams.',
+        process_eyebrow: 'Process', process_title: 'A project structure clients can easily trust.', process_desc: 'A clear process helps visitors understand how PT Ding Sheng Wijaya turns ideas into working systems.',
+        p1_title: 'Consultation', p1_desc: 'We identify business goals, current pain points, and technical requirements.',
+        p2_title: 'Architecture & Planning', p2_desc: 'We design a secure and scalable solution structure before development starts.',
+        p3_title: 'Development & Integration', p3_desc: 'We build and connect the platform with the workflows and tools your team already uses.',
+        p4_title: 'Launch & Optimization', p4_desc: 'We deploy, support, and continuously improve the platform after implementation.',
+        stack_eyebrow: 'Technology Stack', stack_title: 'Modern technology for secure, scalable delivery.', stack_desc: 'A visible stack section helps experienced buyers trust that your company has real implementation capability.',
+        strength_eyebrow: 'Company Strength', strength_title: 'Built to present the company with greater trust and clarity.', strength_desc: 'The website structure is designed to help visitors quickly understand what PT Ding Sheng Wijaya does, what solutions it offers, and why businesses can trust the company for digital transformation projects.',
+        strength_li1: 'Clearer presentation improves client trust', strength_li2: 'Professional design strengthens company image', strength_li3: 'Project examples make capabilities easier to understand', strength_li4: 'Stronger structure supports better engagement and inquiries',
+        cta_eyebrow: 'Let’s Build', cta_title: 'Ready to upgrade your business with a stronger digital system?', cta_desc: 'Whether you need financial software, enterprise dashboards, AI-driven analysis, or workflow automation, PT Ding Sheng Wijaya is ready to support your next project.',
+        chat_whatsapp: 'Chat via WhatsApp', send_email: 'Send Email', company_label: 'Company', email_label: 'Email', whatsapp_label: 'WhatsApp', location_label: 'Location', location_value: 'Indonesia',
+        footer_text: '© 2026 PT Ding Sheng Wijaya. Financial Software • AI • Automation • Enterprise Digital Systems'
+      },
+      id: {
+        company_name: 'PT Ding Sheng Wijaya',
+        nav_solutions: 'Solusi', nav_projects: 'Proyek', nav_industries: 'Industri', nav_process: 'Proses', nav_contact: 'Kontak', consult_now: 'Konsultasi Sekarang', light_theme: 'Terang', dark_theme: 'Gelap',
+        hero_tag: 'PT Ding Sheng Wijaya',
+        hero_title: 'Bangun software finansial, automasi AI, dan sistem bisnis yang aman serta siap berkembang.',
+        hero_desc: 'PT Ding Sheng Wijaya membantu perusahaan modern membangun infrastruktur digital yang praktis — mulai dari software finansial dan automasi proses hingga platform enterprise berbasis AI.',
+        schedule_consultation: 'Jadwalkan Konsultasi', view_projects: 'Lihat Contoh Proyek',
+        metric_year_label: 'Didirikan di Indonesia', metric_secure_title: 'Aman', metric_secure_label: 'Arsitektur dengan prioritas keamanan', metric_custom_title: 'Kustom', metric_custom_label: 'Dibangun untuk operasional nyata',
+        hero_panel_title1: 'Monitoring Keuangan', hero_panel_title2: 'Status Proses', hero_panel_title3: 'Preview Dashboard Enterprise', accuracy: 'Akurasi', visibility: 'Visibilitas', automation: 'Automasi', control: 'Kontrol',
+        approach_eyebrow: 'Tentang Pendekatan Kami', approach_title: 'Tampilan digital yang bersih dan profesional untuk merepresentasikan PT Ding Sheng Wijaya.',
+        approach_desc: 'PT Ding Sheng Wijaya berfokus pada pengembangan software finansial yang aman, automasi cerdas, dan sistem digital enterprise. Bagian ini menampilkan presentasi perusahaan yang rapi, modern, dan berorientasi pada kebutuhan bisnis.',
+        badge_1: 'Software Finansial', badge_2: 'Automasi Cerdas', badge_3: 'Sistem Enterprise', badge_4: 'Efisiensi Bisnis', badge_5: 'Solusi Scalable',
+        quote_title: 'PT Ding Sheng Wijaya menghadirkan solusi teknologi praktis yang dirancang untuk meningkatkan kontrol bisnis, efisiensi, dan skalabilitas jangka panjang.',
+        quote_desc: 'Pendekatan kami menggabungkan kejelasan, kepercayaan, dan presentasi profesional untuk menunjukkan kapabilitas perusahaan dalam software finansial, AI, dan transformasi digital.',
+        solutions_eyebrow: 'Solusi', solutions_title: 'Kategori solusi yang jelas dengan positioning bisnis yang lebih kuat.', solutions_desc: 'Bukan hanya penjelasan umum, struktur ini menunjukkan apa yang benar-benar dapat dibangun perusahaan Anda dan bagaimana manfaatnya bagi klien.',
+        sol1_title: 'Sistem Software Finansial', sol1_desc: 'Platform untuk kontrol transaksi, monitoring, pelaporan keuangan internal, dan dashboard operasional.',
+        sol1_li1: 'Tools monitoring transaksi dan rekonsiliasi', sol1_li2: 'Pelaporan keuangan dan saldo internal', sol1_li3: 'Alur persetujuan dan audit tracking', sol1_li4: 'Dashboard operasional untuk visibilitas pembayaran',
+        sol2_title: 'AI & Automasi Cerdas', sol2_desc: 'Analisis dan automasi berbasis AI untuk mengurangi pekerjaan manual serta meningkatkan kecepatan dan kualitas keputusan.',
+        sol2_li1: 'Pelaporan pintar dan insight operasional', sol2_li2: 'Review anomali dan deteksi pola', sol2_li3: 'Automasi berbasis aturan dan data', sol2_li4: 'Dukungan workflow berbasis AI',
+        sol3_title: 'Automasi Workflow & Proses', sol3_desc: 'Workflow digital yang meningkatkan konsistensi, mengurangi pekerjaan berulang, dan menciptakan operasional yang lebih terkontrol.',
+        sol3_li1: 'Routing proses dan orkestrasi tugas', sol3_li2: 'Integrasi sistem dan notifikasi', sol3_li3: 'Automasi laporan dan sinkronisasi data', sol3_li4: 'Tools kontrol internal dan efisiensi',
+        sol4_title: 'Platform Enterprise Kustom', sol4_desc: 'Software yang dirancang khusus sesuai workflow internal, struktur data, dan rencana pertumbuhan jangka panjang.',
+        sol4_li1: 'Sistem manajemen internal', sol4_li2: 'Dashboard bisnis dan portal analitik', sol4_li3: 'Portal klien yang aman', sol4_li4: 'Platform operasional digital kustom',
+        proj_eyebrow: 'Contoh Proyek Terpilih', proj_title: 'Contoh proyek ilustratif yang selaras dengan kapabilitas PT Ding Sheng Wijaya.', proj_desc: 'Contoh-contoh ini mewakili jenis sistem yang dapat dirancang dan dikembangkan oleh PT Ding Sheng Wijaya untuk bisnis modern, termasuk dashboard keuangan, automasi workflow, dan tools analitik berbasis AI.',
+        proj1_title: 'Dashboard Monitoring Keuangan', proj1_desc: 'Tampilan visual untuk alur transaksi, saldo, metrik utama, dan kontrol pelaporan.',
+        proj2_title: 'Sistem Automasi Workflow', proj2_desc: 'Automasi persetujuan, routing, notifikasi, dan tugas untuk operasional harian yang lebih lancar.',
+        proj3_title: 'Interface Analitik AI', proj3_desc: 'Lapisan pendukung keputusan untuk pemrosesan data, deteksi pola, dan business intelligence.',
+        industries_eyebrow: 'Industri', industries_title: 'Dibangun untuk organisasi yang padat data dan fokus pada operasional.', industries_desc: 'Kategori pasar yang jelas membantu pengunjung memahami dengan cepat apakah perusahaan Anda relevan untuk mereka.',
+        ind1_title: 'Layanan Keuangan', ind1_desc: 'Sistem monitoring, pelaporan, dan operasional untuk workflow terkait keuangan.',
+        ind2_title: 'Operasional Enterprise', ind2_desc: 'Software internal untuk tim yang membutuhkan kecepatan, kontrol, dan visibilitas operasional.',
+        ind3_title: 'Bisnis Digital', ind3_desc: 'Platform scalable untuk perusahaan yang mengandalkan efisiensi proses digital dan pertumbuhan.',
+        ind4_title: 'Tim Berbasis Data', ind4_desc: 'Dukungan AI, analitik, dan automasi untuk tim yang fokus pada pelaporan dan pengambilan keputusan.',
+        process_eyebrow: 'Proses', process_title: 'Struktur proyek yang mudah dipercaya oleh klien.', process_desc: 'Proses yang jelas membantu pengunjung memahami bagaimana PT Ding Sheng Wijaya mengubah ide menjadi sistem yang berjalan nyata.',
+        p1_title: 'Konsultasi', p1_desc: 'Kami mengidentifikasi tujuan bisnis, kendala saat ini, dan kebutuhan teknis.',
+        p2_title: 'Arsitektur & Perencanaan', p2_desc: 'Kami merancang struktur solusi yang aman dan scalable sebelum pengembangan dimulai.',
+        p3_title: 'Pengembangan & Integrasi', p3_desc: 'Kami membangun dan menghubungkan platform dengan workflow serta tools yang sudah digunakan tim Anda.',
+        p4_title: 'Peluncuran & Optimasi', p4_desc: 'Kami melakukan deploy, support, dan peningkatan berkelanjutan setelah implementasi.',
+        stack_eyebrow: 'Teknologi', stack_title: 'Teknologi modern untuk pengiriman yang aman dan scalable.', stack_desc: 'Bagian stack yang terlihat membantu calon klien berpengalaman percaya bahwa perusahaan Anda benar-benar memiliki kapabilitas implementasi.',
+        strength_eyebrow: 'Kekuatan Perusahaan', strength_title: 'Dibangun untuk menampilkan perusahaan dengan kepercayaan dan kejelasan yang lebih baik.', strength_desc: 'Struktur website ini dirancang agar pengunjung cepat memahami apa yang dilakukan PT Ding Sheng Wijaya, solusi apa yang ditawarkan, dan mengapa bisnis dapat mempercayai perusahaan untuk proyek transformasi digital.',
+        strength_li1: 'Presentasi yang lebih jelas meningkatkan kepercayaan klien', strength_li2: 'Desain profesional memperkuat citra perusahaan', strength_li3: 'Contoh proyek memudahkan pemahaman kapabilitas', strength_li4: 'Struktur yang kuat mendukung engagement dan inquiry yang lebih baik',
+        cta_eyebrow: 'Mari Bangun', cta_title: 'Siap meningkatkan bisnis Anda dengan sistem digital yang lebih kuat?', cta_desc: 'Baik Anda membutuhkan software finansial, dashboard enterprise, analitik berbasis AI, atau automasi workflow, PT Ding Sheng Wijaya siap mendukung proyek Anda berikutnya.',
+        chat_whatsapp: 'Chat via WhatsApp', send_email: 'Kirim Email', company_label: 'Perusahaan', email_label: 'Email', whatsapp_label: 'WhatsApp', location_label: 'Lokasi', location_value: 'Indonesia',
+        footer_text: '© 2026 PT Ding Sheng Wijaya. Software Finansial • AI • Automasi • Sistem Digital Enterprise'
       }
     };
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+    const htmlEl = document.documentElement;
+    const langButtons = document.querySelectorAll('[data-set-lang]');
+    const themeButtons = document.querySelectorAll('[data-set-theme]');
+    const i18nNodes = document.querySelectorAll('[data-i18n]');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
     function applyLanguage(lang) {
-      const dict = translations[lang] || translations.id;
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach((el) => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.textContent = dict[key];
+      const dict = translations[lang] || translations.en;
+      htmlEl.setAttribute('lang', lang);
+      htmlEl.setAttribute('data-lang', lang);
+      i18nNodes.forEach((node) => {
+        const key = node.getAttribute('data-i18n');
+        if (dict[key]) node.textContent = dict[key];
       });
-      document.querySelectorAll('.lang-btn').forEach((btn) => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
+      langButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.setLang === lang));
+      localStorage.setItem('dsw-lang', lang);
+      themeButtons.forEach((btn) => {
+        if (btn.dataset.setTheme === 'light') btn.textContent = dict.light_theme;
+        if (btn.dataset.setTheme === 'dark') btn.textContent = dict.dark_theme;
       });
-      localStorage.setItem('site-lang', lang);
     }
 
-    const savedLang = localStorage.getItem('site-lang') || 'id';
-    applyLanguage(savedLang);
-    document.querySelectorAll('.lang-btn').forEach((btn) => {
-      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+    function applyTheme(theme) {
+      const selected = theme === 'dark' ? 'dark' : 'light';
+      htmlEl.setAttribute('data-theme', selected);
+      themeButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.setTheme === selected));
+      localStorage.setItem('dsw-theme', selected);
+    }
+
+    langButtons.forEach((btn) => {
+      btn.addEventListener('click', () => applyLanguage(btn.dataset.setLang));
     });
 
-    const drawer = document.getElementById('mobile-drawer');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const drawerClose = document.querySelector('.drawer-close');
-    const drawerBackdrop = document.querySelector('.mobile-drawer-backdrop');
-    const openDrawer = () => {
-      drawer.hidden = false;
-      document.body.classList.add('drawer-open');
-      if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
-    };
-    const closeDrawer = () => {
-      drawer.hidden = true;
-      document.body.classList.remove('drawer-open');
-      if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
-    };
-    if (menuToggle) menuToggle.addEventListener('click', openDrawer);
-    if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
-    document.querySelectorAll('.mobile-drawer-nav a').forEach((link) => {
-      link.addEventListener('click', closeDrawer);
+    themeButtons.forEach((btn) => {
+      btn.addEventListener('click', () => applyTheme(btn.dataset.setTheme));
     });
+
+    mobileToggle?.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileToggle?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    applyTheme(localStorage.getItem('dsw-theme') || 'light');
+    applyLanguage(localStorage.getItem('dsw-lang') || 'en');
   </script>
 </body>
 </html>
